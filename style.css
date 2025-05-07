@@ -1,13 +1,13 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #0A192F; /* Dark Navy Blue - Refined */
-    --secondary-color: #172A45; /* Slightly Lighter Navy - For cards/bg accents */
-    --accent-color: #64FFDA;   /* Bright Mint Green - Techy accent */
-    --highlight-color: #CCD6F6; /* Light Slate - For text, secondary headings */
-    --text-color: #8892B0;     /* Slate - For body text */
-    --heading-color: #E6F1FF;  /* Lightest Blue/White - For main headings */
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --highlight-color: #CCD6F6;
+    --text-color: #8892B0;
+    --heading-color: #E6F1FF;
     --font-primary: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; /* For code/techy bits */
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
 
 * {
@@ -25,31 +25,31 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
     overflow-x: hidden;
 }
 
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 0 25px; /* Increased padding for better spacing */
+    padding: 0 25px;
     overflow: hidden;
 }
 
 .section-padding {
-    padding: 80px 0; /* Increased padding */
+    padding: 80px 0;
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--font-primary); /* Consistent font, weight will differentiate */
+    font-family: var(--font-primary);
     color: var(--heading-color);
     margin-bottom: 20px;
     font-weight: 600;
     line-height: 1.2;
 }
 
-h2 { /* Section Headings */
-    font-size: clamp(26px, 5vw, 32px); /* Responsive font size */
+h2 {
+    font-size: clamp(26px, 5vw, 32px);
     text-align: center;
     margin-bottom: 50px;
     position: relative;
@@ -57,20 +57,28 @@ h2 { /* Section Headings */
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* Keep title on one line if possible */
+    white-space: nowrap;
 }
 
 h2::before,
-h2::after { /* Lines around section titles */
+h2::after {
     content: '';
     display: block;
     height: 1px;
-    background-color: var(--secondary-color); /* Subtler line */
+    background-color: var(--secondary-color);
     position: relative;
     flex-grow: 1;
 }
 h2::before { margin-right: 20px; }
 h2::after { margin-left: 20px; }
+
+.sub-section-heading {
+    font-size: clamp(20px, 4vw, 26px);
+    color: var(--highlight-color);
+    margin-top: 60px; /* Space above sub-heading */
+    margin-bottom: 30px;
+    text-align: center;
+}
 
 
 a {
@@ -89,14 +97,14 @@ ul {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px; /* Slightly larger padding */
-    border-radius: 4px; /* Sharper radius */
-    font-family: var(--font-mono); /* Techy font for buttons */
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
     font-size: 14px;
     font-weight: 500;
     transition: all 0.25s ease;
     border: 1px solid var(--accent-color);
-    text-transform: none; /* More modern feel */
+    text-transform: none;
 }
 
 .btn-primary {
@@ -116,7 +124,7 @@ ul {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(100, 255, 218, 0.1); /* Accent color with low opacity */
+    background-color: rgba(100, 255, 218, 0.1);
     transform: translateY(-3px);
 }
 
@@ -133,7 +141,7 @@ ul {
 
 /* --- Navigation Bar --- */
 #navbar {
-    background: rgba(10, 25, 47, 0.85); /* Darker, more opaque */
+    background: rgba(10, 25, 47, 0.85);
     color: var(--highlight-color);
     padding: 1rem 0;
     position: fixed;
@@ -147,7 +155,7 @@ ul {
 #navbar.scrolled {
     background: var(--primary-color);
     padding: 0.8rem 0;
-    box-shadow: 0 5px 15px rgba(2, 12, 27, 0.7); /* More pronounced shadow */
+    box-shadow: 0 5px 15px rgba(2, 12, 27, 0.7);
 }
 
 #navbar .container {
@@ -158,13 +166,13 @@ ul {
 
 #navbar .logo-name a {
     font-family: var(--font-mono);
-    color: var(--accent-color); /* Logo in accent color */
-    font-size: 1.5rem; /* Slightly smaller logo */
+    color: var(--accent-color);
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: -0.5px;
 }
 #navbar .logo-name a:hover {
-    opacity: 1; /* No hover effect for logo itself */
+    opacity: 1;
 }
 
 #navbar .nav-links {
@@ -173,33 +181,39 @@ ul {
 }
 
 #navbar .nav-links li {
-    margin-left: 20px; /* Slightly less margin */
+    margin-left: 15px; /* Adjusted for fewer items */
     font-family: var(--font-mono);
-    font-size: 13px; /* Smaller nav links */
+    font-size: 14px; /* Slightly larger for fewer items */
 }
 #navbar .nav-links li:first-child { margin-left: 0; }
 
 
 #navbar .nav-links a {
     color: var(--highlight-color);
-    padding: 10px;
+    padding: 10px 12px; /* Adjusted padding */
     position: relative;
+    border-radius: 3px;
 }
 
-#navbar .nav-links a:hover {
+#navbar .nav-links a:hover,
+#navbar .nav-links a.active { /* Style for active link */
     color: var(--accent-color);
     opacity: 1;
 }
+#navbar .nav-links a.active {
+    background-color: rgba(100, 255, 218, 0.1); /* Subtle background for active */
+}
+
 
 .hamburger {
     display: none;
     background: none;
     border: none;
     color: var(--accent-color);
-    font-size: 1.8rem; /* Larger hamburger */
+    font-size: 1.8rem;
     cursor: pointer;
     padding: 5px;
-    z-index: 1001; /* Above nav links on mobile */
+    z-index: 1001;
 }
 
 
@@ -208,17 +222,17 @@ ul {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
+    align-items: flex-start;
     justify-content: center;
-    text-align: left; /* Left align text */
+    text-align: left;
     position: relative;
     color: var(--heading-color);
-    background: var(--primary-color); /* Solid dark background */
-    padding: 0 5%; /* Add some padding */
+    background: var(--primary-color);
+    padding: 0 5%;
 }
 
 .hero-container {
-    max-width: 1000px; /* Allow more width */
+    max-width: 1000px;
     padding: 20px;
     animation: fadeInHero 1s ease-out;
 }
@@ -229,15 +243,15 @@ ul {
 }
 
 #hero h1 {
-    font-size: clamp(40px, 8vw, 70px); /* Responsive heading */
+    font-size: clamp(40px, 8vw, 70px);
     font-weight: 700;
     color: var(--heading-color);
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px;
 }
 
 #hero .subtitle {
-    font-size: clamp(18px, 4vw, 32px); /* Responsive subtitle */
-    color: var(--highlight-color); /* Subtler color for subtitle */
+    font-size: clamp(18px, 4vw, 32px);
+    color: var(--highlight-color);
     margin-bottom: 25px;
     font-family: var(--font-primary);
     font-weight: 500;
@@ -247,13 +261,13 @@ ul {
     font-size: clamp(16px, 2.5vw, 20px);
     margin-bottom: 40px;
     color: var(--text-color);
-    max-width: 600px; /* Constrain hook width */
+    max-width: 600px;
     line-height: 1.5;
 }
 
 .hero-buttons .btn {
     margin-right: 15px;
-    margin-bottom: 10px; /* For stacking on small screens */
+    margin-bottom: 10px;
 }
 
 /* --- About Section --- */
@@ -283,13 +297,13 @@ ul {
 .competencies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Reduced gap */
+    gap: 20px;
 }
 
 .competency-card {
     background: var(--secondary-color);
     padding: 25px;
-    border-radius: 4px; /* Sharper radius */
+    border-radius: 4px;
     border-left: 3px solid var(--accent-color);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
@@ -301,7 +315,7 @@ ul {
 .competency-card h3 {
     color: var(--accent-color);
     margin-bottom: 15px;
-    font-size: 1.2rem; /* Slightly smaller competency titles */
+    font-size: 1.2rem;
     font-weight: 600;
 }
 .competency-card h3 i {
@@ -311,13 +325,13 @@ ul {
 
 .competency-card ul li {
     margin-bottom: 8px;
-    font-size: 0.95rem; /* Smaller list items */
+    font-size: 0.95rem;
     padding-left: 18px;
     position: relative;
 }
 
 .competency-card ul li::before {
-    content: '\2023'; /* Bullet point */
+    content: '\2023';
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
@@ -350,17 +364,17 @@ ul {
 }
 
 
-/* --- Experience Section (Timeline) --- */
+/* --- Experience Section (Timeline) & Collapsible Section --- */
 .timeline {
     position: relative;
-    max-width: 900px; /* Wider timeline */
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .timeline::after {
     content: '';
     position: absolute;
-    width: 2px; /* Thinner line */
+    width: 2px;
     background-color: var(--secondary-color);
     top: 0;
     bottom: 0;
@@ -375,10 +389,10 @@ ul {
     background-color: inherit;
     width: 50%;
 }
-.timeline-item::after { /* Timeline dot */
+.timeline-item::after {
     content: '';
     position: absolute;
-    width: 16px; /* Smaller dot */
+    width: 16px;
     height: 16px;
     right: -8px;
     background-color: var(--primary-color);
@@ -388,12 +402,12 @@ ul {
     z-index: 1;
 }
 
-.timeline-item:nth-child(odd) { left: 0; text-align: right; } /* Align text for odd items */
-.timeline-item:nth-child(odd)::after { right: -8px; } /* Keep dot on the right */
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(odd)::after { right: -8px; }
 .timeline-item:nth-child(odd) .timeline-content { border-right: 3px solid var(--accent-color); border-left: none; }
 
 
-.timeline-item:nth-child(even) { left: 50%; text-align: left; } /* Align text for even items */
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
 .timeline-item:nth-child(even)::after { left: -8px; }
 .timeline-item:nth-child(even) .timeline-content { border-left: 3px solid var(--accent-color); border-right: none; }
 
@@ -416,17 +430,77 @@ ul {
     font-family: var(--font-mono);
     color: var(--accent-color);
     margin-bottom: 8px;
-    display: block; /* Ensure it's on its own line */
+    display: block;
 }
 .timeline-content p {
     font-size: 0.95rem;
-    margin-bottom: 5px; /* Tighter spacing for description */
+    margin-bottom: 5px;
 }
+.timeline-content ul {
+    margin-top: 10px;
+    padding-left: 5px; /* Indent bullet points slightly more */
+}
+.timeline-content ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding-left: 18px; /* Space for bullet */
+    position: relative;
+    text-align: left; /* Ensure li text is left-aligned */
+}
+.timeline-content ul li::before {
+    content: '\2023'; /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8em;
+}
+
+
+/* Collapsible Section Styles */
+.collapsible-section {
+    margin-top: 30px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: var(--secondary-color); /* Match card backgrounds */
+}
+.collapsible-summary {
+    padding: 15px 20px;
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--highlight-color);
+    cursor: pointer;
+    display: flex; /* For arrow alignment */
+    justify-content: space-between; /* Pushes arrow to the right */
+    align-items: center;
+    list-style: none; /* Remove default marker */
+}
+.collapsible-summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
+.collapsible-summary::marker { display: none; } /* Firefox */
+
+.collapsible-summary::after { /* Custom arrow */
+    content: '\f078'; /* FontAwesome down arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-color);
+    transition: transform 0.2s ease-in-out;
+    font-size: 0.9em;
+}
+.collapsible-section[open] > .collapsible-summary::after {
+    transform: rotate(180deg); /* Up arrow */
+}
+
+.collapsible-content {
+    padding: 0px 20px 20px 20px; /* No top padding, summary has it */
+    border-top: 1px solid var(--primary-color); /* Separator line */
+}
+.collapsible-content .timeline { margin-top: 20px; }
+
 
 /* --- Projects Section (Featured & Side) --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min width for cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
@@ -436,7 +510,7 @@ ul {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures button aligns to bottom */
+    justify-content: space-between;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     box-shadow: 0 5px 15px rgba(2,12,27,0.5);
 }
@@ -447,13 +521,13 @@ ul {
 }
 
 .project-card .project-icon {
-    font-size: 2rem; /* Smaller icon */
+    font-size: 2rem;
     color: var(--accent-color);
     margin-bottom: 15px;
 }
 
 .project-card h3 {
-    font-size: 1.3rem; /* Slightly larger project titles */
+    font-size: 1.3rem;
     color: var(--highlight-color);
     margin-bottom: 10px;
 }
@@ -467,9 +541,19 @@ ul {
     font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--accent-color);
-    display: block; /* Tech stack on new line */
+    display: block;
     margin-top: 8px;
 }
+.project-card-cta { /* Special styling for "See All" card */
+    text-align: center;
+    justify-content: center; /* Center content vertically */
+}
+.project-card-cta .btn-block {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
 
 /* --- Speaking Engagements & Media Section --- */
 .gallery-grid {
@@ -489,8 +573,8 @@ ul {
 }
 .gallery-item img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Crop images to fit */
+    height: 220px; /* Adjusted height */
+    object-fit: cover;
     display: block;
     border-bottom: 2px solid var(--accent-color);
 }
@@ -533,24 +617,38 @@ ul {
     padding-left: 0;
     max-width: 800px;
     margin: 0 auto;
-    display: grid; /* Two columns for courses */
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px 20px;
 }
 .courses-list li {
     background: var(--secondary-color);
-    padding: 12px 15px; /* Tighter padding */
-    margin-bottom: 0; /* Gap handles spacing */
+    padding: 12px 15px;
+    margin-bottom: 0;
     border-radius: 4px;
     font-size: 0.95rem;
-    display: flex; /* Align icon and text */
+    display: flex;
     align-items: center;
+    justify-content: space-between; /* For certificate link alignment */
 }
 .courses-list li i {
-    margin-right: 12px; /* Space after icon */
+    margin-right: 12px;
     color: var(--accent-color);
     font-size: 1.1em;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
+.courses-list li .certificate-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevent link from wrapping */
+    color: var(--accent-color);
+    opacity: 0.8;
+}
+.courses-list li .certificate-link:hover {
+    opacity: 1;
+}
+
 
 /* --- Contact Section --- */
 #contact {
@@ -577,7 +675,7 @@ footer {
     background: var(--secondary-color);
     color: var(--text-color);
     text-align: center;
-    padding: 40px 20px; /* Increased padding */
+    padding: 40px 20px;
     margin-top: 60px;
     font-size: 0.9rem;
 }
@@ -592,10 +690,10 @@ footer .memberships {
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-    .timeline::after { left: 30px; } /* Move timeline line left for stacked items */
-    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; } /* Force left align */
+    .timeline::after { left: 30px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
     .timeline-item:nth-child(even) { left: 0%; }
-    .timeline-item::after { left: 22px; } /* Adjust dot for stacked items */
+    .timeline-item::after { left: 22px; }
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
         border-left: 3px solid var(--accent-color);
@@ -606,10 +704,10 @@ footer .memberships {
 
 @media (max-width: 768px) {
     #navbar .container {
-        flex-direction: row; /* Keep logo and hamburger on same line */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px; /* Ensure padding for hamburger */
+        padding: 0 20px;
     }
 
     .hamburger { display: block; }
@@ -617,13 +715,13 @@ footer .memberships {
     #navbar .nav-links {
         display: none;
         flex-direction: column;
-        position: fixed; /* Full screen mobile menu */
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
         background: var(--primary-color);
-        padding-top: 80px; /* Space for close button or logo */
+        padding-top: 80px;
         align-items: center;
         justify-content: center;
         transform: translateX(100%);
@@ -635,7 +733,7 @@ footer .memberships {
     }
     #navbar .nav-links li {
         margin: 20px 0;
-        font-size: 1.2rem; /* Larger links for mobile menu */
+        font-size: 1.2rem;
     }
     #navbar .nav-links a {
         padding: 15px;
@@ -650,8 +748,8 @@ footer .memberships {
 
 
     h2 { font-size: clamp(22px, 6vw, 28px); }
-    h2::before, h2::after { display: none; } /* Remove lines on mobile for cleaner look */
-    h2::after { /* Re-add simpler underline for mobile */
+    h2::before, h2::after { display: none; }
+    h2::after {
         content: '';
         display: block;
         width: 60px;
@@ -662,8 +760,11 @@ footer .memberships {
 
 
     .competencies-grid, .tech-stack-grid, .projects-grid, .gallery-grid, .courses-list {
-        grid-template-columns: 1fr; /* Stack cards */
+        grid-template-columns: 1fr;
     }
 
     .section-padding { padding: 60px 0; }
+
+    .collapsible-summary { font-size: 1.1rem; }
 }
+
