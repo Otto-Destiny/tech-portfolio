@@ -624,31 +624,34 @@ ul {
 .courses-list li {
     background: var(--secondary-color);
     padding: 12px 15px;
-    margin-bottom: 0;
+    margin-bottom: 0; 
     border-radius: 4px;
     font-size: 0.95rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* For certificate link alignment */
+    align-items: baseline;
 }
 .courses-list li i {
-    margin-right: 12px;
+    margin-right: 10px;
     color: var(--accent-color);
-    font-size: 1.1em;
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    font-size: 1em; 
+    flex-shrink: 0;
+    position: relative; 
+    top: 0.1em;  
+    line-height: 1;  
 }
 .courses-list li .certificate-link {
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    margin-left: 10px;
-    white-space: nowrap; /* Prevent link from wrapping */
+    margin-left: auto; 
+    padding-left: 15px;
+    white-space: nowrap; 
     color: var(--accent-color);
     opacity: 0.8;
+    flex-shrink: 0; 
 }
 .courses-list li .certificate-link:hover {
     opacity: 1;
 }
-
 
 /* --- Contact Section --- */
 #contact {
